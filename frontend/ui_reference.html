@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MaTipPost | Creator Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#2a0044",
+                      "surface-container-highest": "#ffd0e2",
+                      "on-tertiary": "#fdeeff",
+                      "surface-container-low": "#ffecf1",
+                      "primary-dim": "#a00042",
+                      "primary-fixed-dim": "#ff5484",
+                      "tertiary-dim": "#7329a4",
+                      "on-secondary": "#fff0e7",
+                      "on-tertiary-fixed-variant": "#5b018c",
+                      "primary": "#b7004d",
+                      "secondary-dim": "#7a4100",
+                      "surface": "#fff4f6",
+                      "on-tertiary-container": "#4e0079",
+                      "on-surface-variant": "#7d4d62",
+                      "secondary-fixed": "#ffc699",
+                      "surface-container": "#ffe0eb",
+                      "background": "#fff4f6",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#7b4200",
+                      "inverse-primary": "#ff4d80",
+                      "on-primary": "#ffeff0",
+                      "on-secondary-container": "#6e3a00",
+                      "secondary-fixed-dim": "#ffb373",
+                      "error": "#b31b25",
+                      "tertiary-container": "#d697ff",
+                      "primary-fixed": "#ff7293",
+                      "error-dim": "#9f0519",
+                      "surface-bright": "#fff4f6",
+                      "on-secondary-fixed": "#522a00",
+                      "tertiary-fixed-dim": "#cd83ff",
+                      "on-surface": "#4a2135",
+                      "surface-container-high": "#ffd8e6",
+                      "on-primary-fixed-variant": "#5e0024",
+                      "surface-variant": "#ffd0e2",
+                      "on-error": "#ffefee",
+                      "on-error-container": "#570008",
+                      "tertiary": "#8037b1",
+                      "tertiary-fixed": "#d697ff",
+                      "on-primary-container": "#4d001c",
+                      "surface-dim": "#ffc4dc",
+                      "secondary-container": "#ffc699",
+                      "primary-container": "#ff7293",
+                      "outline": "#9c687e",
+                      "inverse-on-surface": "#c58da4",
+                      "error-container": "#fb5151",
+                      "secondary": "#8b4b00",
+                      "on-background": "#4a2135",
+                      "on-primary-fixed": "#000000",
+                      "surface-tint": "#b7004d",
+                      "inverse-surface": "#220213",
+                      "outline-variant": "#d79db5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Plus Jakarta Sans"],
+                      "mono": ["JetBrains Mono"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff4f6; color: #4a2135; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .mono-text { font-family: 'JetBrains Mono', monospace; }
+        .glass-header { backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#ffecf1]/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(74,33,53,0.06)] flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-black text-[#b7004d] tracking-tight">MaTipPost</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#b7004d] font-bold plus-jakarta-sans transition-transform duration-200 hover:scale-105" href="#">Feed</a>
+<a class="text-[#4a2135] opacity-60 plus-jakarta-sans transition-transform duration-200 hover:scale-105" href="#">Trending</a>
+<a class="text-[#4a2135] opacity-60 plus-jakarta-sans transition-transform duration-200 hover:scale-105" href="#">Earnings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="px-4 py-2 bg-surface-container-lowest rounded-full shadow-sm flex items-center gap-2">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+<span class="mono-text text-sm font-medium tracking-tight">0x1234...abcd</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-lg">Connect</button>
+</div>
+</nav>
+<div class="flex pt-24 px-8 gap-8 max-w-[1440px] mx-auto min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col w-64 h-[calc(100vh-8rem)] sticky top-24 gap-2">
+<div class="p-6 mb-4 flex flex-col gap-1">
+<span class="text-xl font-black text-[#b7004d] plus-jakarta-sans">Creator Hub</span>
+<span class="text-xs opacity-50 mono-text uppercase tracking-widest">0x...f2e1</span>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 bg-[#ffffff] text-[#b7004d] rounded-full px-6 py-3 font-bold transition-all hover:scale-102" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="plus-jakarta-sans">Feed</span>
+</a>
+<a class="flex items-center gap-3 text-[#4a2135] opacity-70 px-6 py-3 rounded-full hover:bg-[#ffecf1] transition-all hover:scale-102" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="plus-jakarta-sans">Trending</span>
+</a>
+<a class="flex items-center gap-3 text-[#4a2135] opacity-70 px-6 py-3 rounded-full hover:bg-[#ffecf1] transition-all hover:scale-102" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="plus-jakarta-sans">Earnings</span>
+</a>
+<a class="flex items-center gap-3 text-[#4a2135] opacity-70 px-6 py-3 rounded-full hover:bg-[#ffecf1] transition-all hover:scale-102" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="plus-jakarta-sans">Settings</span>
+</a>
+</div>
+<div class="mt-auto p-6 bg-surface-container rounded-xl">
+<span class="text-xs uppercase tracking-widest opacity-60 mb-2 block font-bold">Current Balance</span>
+<span class="text-2xl font-black text-primary mono-text">1.45 ETH</span>
+</div>
+<button class="mt-4 bg-primary text-on-primary py-4 rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-all">New Post</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-8 pb-12">
+<!-- Bento Stats Header -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col justify-between min-h-[200px] relative overflow-hidden group">
+<div class="relative z-10">
+<span class="text-sm font-bold uppercase tracking-widest opacity-50">Total Earnings</span>
+<h1 class="text-6xl font-black text-on-surface mt-2 tracking-tighter">1.45 ETH</h1>
+</div>
+<div class="relative z-10 flex gap-4 mt-4">
+<div class="px-4 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-bold">+12% this week</div>
+<div class="px-4 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold">Top 5% Creator</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[12rem]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-xl flex flex-col justify-center items-center text-center gap-2 group cursor-pointer hover:bg-primary-dim transition-colors">
+<span class="material-symbols-outlined text-on-primary text-4xl" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-xl font-bold text-on-primary">Post &amp; Earn</h3>
+<p class="text-on-primary opacity-80 text-sm">Your content is your asset. Start sharing now.</p>
+</div>
+</section>
+<!-- Create Post Form -->
+<section class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a modern digital artist with soft neon lighting and a neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf0kMBXDssergUXSRqXeQ8dJfMF4lb6q-sjNcyoAPc_dSYBVABq8Ow1a40Ukg4CwxuSqNKeUTP7PEkxnCx0dRDZquU2JnMCeZqIZHTFRd4vOh5F7AxYvvpGvicIcN2xtHCzLxKVBeqQpOIkf5Ux1uHFKHjstN76FSov5dKnrq5V-iuL5wN5IJFmlBycftKYUCPrbgnrFK4JTfWAGPMzIPqh-A-4VC0-gO0V2y1Iu5xmL-I6P20mTLpKCf_dbBXBDwggguK6ZrGPA"/>
+</div>
+<div class="flex-1 flex flex-col gap-4">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-lg placeholder:opacity-40 resize-none min-h-[100px]" placeholder="What's happening in the creator economy?"></textarea>
+<div class="flex justify-between items-center pt-4">
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="image">image</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="gif_box">gif_box</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-8 py-2 rounded-full font-bold shadow-md hover:scale-105 active:scale-95 transition-all">Post</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feed -->
+<section class="flex flex-col gap-8">
+<!-- Post Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="p-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="professional headshot of a female entrepreneur in a minimalist studio setting with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADM9kfDUn_z_TV4Oe9O7atEjLqmW91_DPzEmAPOC3QooSK__AnUjFvRdNxBCSlib82LuAaXTfH6r2YAeebzkid95okR4vKxsA6x_DwxX11TtsAz81RbSk6nsM8-J4gEfxI2PPb8s9Zek-fqp6VjeR3TTVy2Y4AmXMJCfD4F3TkYeClXCdQ2lJvOS8cFTBNqUxpDyhMu69dHuCcLY_lfT7Q54bq01RwNST8graofnE6U0HiPPSzpaBx8hX8uomByzmolfmmfBGvnA"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Elena Vance</h4>
+<p class="mono-text text-xs opacity-50">0x8832...e32a</p>
+</div>
+</div>
+<button class="text-on-surface opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<div class="px-6 pb-4">
+<p class="text-on-surface leading-relaxed">Just dropped my latest collection on the chain. The future of social interaction is ownership. 🚀 #web3 #creator</p>
+</div>
+<div class="px-6 pb-6">
+<div class="rounded-lg overflow-hidden h-[400px]">
+<img alt="Post content" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="abstract digital art with flowing pink and orange neon waves on a deep dark purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVE8GOCfmgBmAm1dY-rZTW84-Kgfr34Z7aJa1svV6TmL2KbgCEQHYDbe39W_cuEAOoo9KWQdvlgTT-SBOYxU0QHC73s1jifvQBLkxAIfwj_Ma8lRIPwdFrM3lBDNIE0m07nVm36CshIz8SqC_UhVy6TJz7E1ruLbdDe1NJwGX3iLnbceOvBzyDaSrRKYSN5I_wzDYCAxGVWbSWAc8LYnYWFJV6BnwiKqLE-UJ4aq0S1ewmXjjglJ8jYbA8bZmvNhXlgcY0_01uMA"/>
+</div>
+</div>
+<div class="px-6 pb-6 flex items-center justify-between">
+<div class="flex gap-6">
+<button class="flex items-center gap-2 text-primary group/btn transition-all">
+<span class="material-symbols-outlined text-2xl group-hover/btn:scale-125 transition-transform" data-icon="favorite" data-weight="fill">favorite</span>
+<span class="mono-text font-bold">0.0001 ETH</span>
+</button>
+<button class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="mono-text font-bold">12</span>
+</button>
+<button class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-2xl" data-icon="share">share</span>
+</button>
+</div>
+<div class="px-4 py-1 bg-surface-container rounded-full text-xs mono-text font-medium opacity-60">2h ago</div>
+</div>
+</article>
+<!-- Post Card 2 (Minimal Text Only) -->
+<article class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-secondary-container">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="man with beard wearing stylish glasses in a city environment with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyzDUjw8cyXsSyHn28m0d-lpPocq-Ae5s_ndhKCc0FWTtPpOIP7Q69SN85gBerl6K257TqJpS7i9b2NLoQOq2mZ-hyyOCUNH-88SuFcrANxtFr4DS8RaQhpLm2EFgPYbHOdB7SXi6HczKJQmDdoRREvFC98sCfZONtvh95NdVstEbplY2f9_cKVaXcPr7W0gTLcLzrErAV5SeKll2GI4ezvkKzuZ3CBc6rT1oWU561c3OJoMlMRuYiQWN7rzBO5xECbsSOkY3lLQ"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center w-full">
+<h4 class="font-bold text-on-surface">Marcus K.</h4>
+<span class="px-3 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest">Verified Creator</span>
+</div>
+<p class="mono-text text-xs opacity-50">0x2211...b11a</p>
+</div>
+</div>
+<p class="text-2xl font-medium leading-snug tracking-tight text-on-surface-variant">
+                        "The best way to predict the future of the web is to build it with incentives aligned between platforms and users." 
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex gap-6">
+<button class="flex items-center gap-2 text-primary hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite" data-weight="fill">favorite</span>
+<span class="mono-text font-bold">0.0001 ETH</span>
+</button>
+<button class="flex items-center gap-2 opacity-50">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="mono-text font-bold">48</span>
+</button>
+</div>
+<span class="mono-text text-xs opacity-40 uppercase tracking-widest">Sponsored by TipPost Foundation</span>
+</div>
+</article>
+</section>
+</main>
+<!-- Right Rail / Analytics -->
+<aside class="hidden xl:flex flex-col w-80 h-fit sticky top-24 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4">
+<h3 class="font-black text-on-surface uppercase tracking-widest text-xs">Trending Topics</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col">
+<span class="text-xs opacity-40 mono-text">#DecentralizedSocial</span>
+<span class="font-bold text-sm">4.2 ETH Tipped</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs opacity-40 mono-text">#ArtOnChain</span>
+<span class="font-bold text-sm">2.8 ETH Tipped</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs opacity-40 mono-text">#MaTipPostAlpha</span>
+<span class="font-bold text-sm">1.5 ETH Tipped</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest/30 p-6 rounded-xl border border-primary/10">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<span class="text-xs font-bold uppercase tracking-tighter">Gas Estimation</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="text-3xl font-black mono-text">12 Gwei</span>
+<span class="text-xs opacity-50">Safe Low</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Error Toast -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md px-4">
+<div class="bg-error-container text-on-error-container p-4 rounded-xl shadow-2xl flex items-center justify-between gap-4 border border-error/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-icon="error">error</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Transaction Failed</span>
+<span class="text-xs opacity-80">Insufficient funds for the selected tip amount.</span>
+</div>
+</div>
+<button class="p-2 hover:bg-on-error-container/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</body></html>

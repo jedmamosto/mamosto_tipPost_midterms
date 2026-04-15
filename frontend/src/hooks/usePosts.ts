@@ -58,7 +58,7 @@ export function usePosts() {
     }
   }, [contract, account]);
 
-  const createPost = async (imageUrl: string, caption: string) => {
+  const createPost = useCallback(async (imageUrl: string, caption: string) => {
     if (!contract) {
       setError('Wallet not connected');
       return;
@@ -72,15 +72,27 @@ export function usePosts() {
       await tx.wait(1); // Wait for 1 confirmation
       await fetchData();
     } catch (err: any) {
-      console.error('Error creating post:', err);
-      setError(err.reason || err.message || 'Failed to create post');
+      console.error('Create error:', err);
+      
+      let message = 'Failed to create post.';
+      if (err.code === 'ACTION_REJECTED') {
+        message = 'Transaction cancelled.';
+      } else if (err.code === 'INSUFFICIENT_FUNDS') {
+        message = 'Insufficient ETH to pay for gas fees.';
+      } else if (err.reason) {
+        message = `Contract error: ${err.reason}`;
+      } else if (err.message) {
+        message = err.message.split('(')[0].trim();
+      }
+      
+      setError(message);
       throw err;
     } finally {
       setLoading(false);
     }
-  };
+  }, [contract, fetchData]);
 
-  const likePost = async (postId: number) => {
+  const likePost = useCallback(async (postId: number) => {
     if (!contract) {
       setError('Wallet not connected');
       return;
@@ -96,15 +108,30 @@ export function usePosts() {
       await tx.wait(1);
       await fetchData();
     } catch (err: any) {
-      console.error('Error liking post:', err);
-      setError(err.reason || err.message || 'Failed to like post');
+      console.error('Like error:', err);
+      
+      let message = 'Failed to like post.';
+      
+      if (err.code === 'ACTION_REJECTED') {
+        message = 'Transaction cancelled by user.';
+      } else if (err.code === 'INSUFFICIENT_FUNDS') {
+        message = 'Insufficient ETH for tip + gas. Please get some from a Sepolia faucet!';
+      } else if (err.reason) {
+        message = `Contract says: ${err.reason}`;
+      } else if (err.message?.includes('insufficient funds')) {
+        message = 'Insufficient ETH in your wallet to cover the tip and gas fees.';
+      } else if (err.message) {
+        message = err.message.split('(')[0].trim();
+      }
+
+      setError(message);
       throw err;
     } finally {
       setLoading(false);
     }
-  };
+  }, [contract, fetchData]);
 
-  const checkLiked = async (postId: number, userAddress: string) => {
+  const checkLiked = useCallback(async (postId: number, userAddress: string) => {
     if (!contract) return false;
     try {
       return await contract.checkLiked(postId, userAddress);
@@ -112,11 +139,30 @@ export function usePosts() {
       console.error('Error checking if liked:', err);
       return false;
     }
-  };
+  }, [contract]);
 
   useEffect(() => {
     if (contract) {
       fetchData();
+
+      // Listen for events for real-time updates
+      const onPostCreated = () => {
+        console.log('Real-time update: PostCreated event received');
+        fetchData();
+      };
+
+      const onPostLiked = () => {
+        console.log('Real-time update: PostLiked event received');
+        fetchData();
+      };
+
+      contract.on('PostCreated', onPostCreated);
+      contract.on('PostLiked', onPostLiked);
+
+      return () => {
+        contract.off('PostCreated', onPostCreated);
+        contract.off('PostLiked', onPostLiked);
+      };
     }
   }, [contract, fetchData]);
 
